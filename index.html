@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MERIDIAN | 海外展開を、ワンストップで。</title>
+<meta name="description" content="市場調査から現地法人の設立、ローカライズ、集客まで。海外展開に必要なすべてを、ひとつのチームで伴走します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1026; --navy2:#151B3A; --paper:#F4F2EC; --white:#FFFFFF;
+    --cobalt:#3B5BFF; --coral:#FF6A3D; --mute:#5B6078; --line:#DAD6CC;
+    --jp:"Noto Sans JP",system-ui,sans-serif; --en:"Space Grotesk","Noto Sans JP",sans-serif;
+    --gutter:clamp(16px,8.3vw,120px); --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--jp);color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{padding-inline:var(--gutter);max-width:1440px;margin-inline:auto}
+  section{padding-block:clamp(72px,9vw,120px)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .2s,background .2s,border-color .2s}
+  .btn::after{content:"→";font-family:var(--en);transition:transform .2s}
+  .btn:hover::after{transform:translateX(4px)}
+  .btn-primary{background:var(--coral);color:var(--ink)}
+  .btn-primary:hover{background:#ff7f58}
+  .btn-ghost{border:1px solid rgba(255,255,255,.4);color:var(--white)}
+  .btn-ghost:hover{border-color:var(--white)}
+  .btn-sm{padding:11px 20px;font-size:14px}
+
+  .eyebrow{font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--cobalt);text-transform:uppercase;margin-bottom:14px}
+  .h2{font-weight:900;font-size:clamp(30px,3.6vw,44px);line-height:1.35}
+
+  /* Hero */
+  .hero{background:var(--ink);color:var(--white);padding:32px 0 96px;overflow:hidden;position:relative}
+  .hero::before{content:"";position:absolute;inset:auto -20% -40% auto;width:60vw;height:60vw;background:radial-gradient(circle,rgba(59,91,255,.35),transparent 60%);pointer-events:none}
+  nav{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;font-size:20px;letter-spacing:.1em}
+  .links{display:flex;align-items:center;gap:40px;font-size:14px;font-weight:500}
+  .links a:not(.btn){opacity:.85}
+  .links a:not(.btn):hover{opacity:1}
+  .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:8px 16px;font:500 13px var(--en)}
+
+  .hero-body{display:grid;grid-template-columns:1fr minmax(0,520px);gap:64px;align-items:end;margin-top:120px;position:relative;z-index:1}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;font:500 12px var(--en);letter-spacing:.1em}
+  .pill i{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+  .hero h1{font-weight:900;font-size:clamp(48px,6.7vw,96px);line-height:1.18;letter-spacing:-.02em;margin:32px 0}
+  .hero h1 em{font-style:normal;color:var(--coral)}
+  .hero .lead{font-size:clamp(15px,1.3vw,18px);line-height:1.9;opacity:.78;max-width:620px}
+  .ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+
+  .hero-visual{position:relative;aspect-ratio:520/560;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,var(--cobalt),var(--ink))}
+  .hero-visual img{width:100%;height:100%;object-fit:cover}
+  .hero-visual svg{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;opacity:.55}
+  .badge{position:absolute;left:24px;bottom:24px;background:var(--white);color:var(--ink);border-radius:16px;padding:16px 20px}
+  .badge small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
+  .badge b{font:700 28px var(--en)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.15);margin-top:120px;padding-top:40px;position:relative;z-index:1}
+  .stats b{display:block;font:700 clamp(34px,3.4vw,48px) var(--en);line-height:1.2}
+  .stats span{font-size:14px;font-weight:500;opacity:.6}
+
+  /* Services */
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px}
+  .sec-head p{max-width:440px;font-size:15px;color:var(--mute);line-height:1.9}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(11,16,38,.25)}
+  .card .num{font:700 14px var(--en);letter-spacing:.08em;color:var(--cobalt)}
+  .card .icon{width:48px;height:48px;border-radius:14px;background:rgba(59,91,255,.1);display:grid;place-items:center}
+  .card h3{font-size:22px;line-height:1.4}
+  .card p{font-size:14px;color:var(--mute);line-height:1.8;flex:1}
+  .card .tag{font:500 12px var(--en);letter-spacing:.04em;color:var(--mute)}
+
+  /* Process */
+  .process{background:var(--white)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;counter-reset:s}
+  .step{border-top:1px solid rgba(11,16,38,.15);padding:28px 32px 0 0;display:flex;flex-direction:column;gap:14px}
+  .step:first-child{border-top:3px solid var(--coral)}
+  .step .k{font:700 13px var(--en);letter-spacing:.12em;color:var(--coral)}
+  .step h3{font-size:22px}
+  .step p{font-size:14px;color:var(--mute);line-height:1.8}
+  .step .d{font:500 13px var(--en);color:var(--cobalt)}
+
+  /* Regions */
+  .regions{background:var(--navy2);color:var(--white)}
+  .regions-row{display:grid;grid-template-columns:minmax(0,460px) 1fr;gap:80px;align-items:center}
+  .regions .h2{color:var(--white)}
+  .regions p.lead{margin-top:24px;font-size:15px;line-height:1.9;opacity:.7}
+  .region-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .region{border-radius:var(--radius);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:28px;transition:background .25s,border-color .25s}
+  .region:hover{background:rgba(255,255,255,.09);border-color:rgba(255,106,61,.6)}
+  .region b{display:block;font:700 24px var(--en)}
+  .region span{font:400 14px var(--en);color:var(--coral)}
+
+  /* Voice */
+  .voices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+  .voice{background:var(--white);border-radius:var(--radius);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+  .voice blockquote{font-size:17px;font-weight:500;line-height:1.9}
+  .who{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;color:var(--mute)}
+  .who i{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font:700 13px var(--en);font-style:normal}
+
+  /* CTA */
+  .cta-sec{padding-top:0}
+  .cta{background:var(--cobalt);color:var(--white);border-radius:32px;padding:clamp(56px,6vw,88px) clamp(24px,5.5vw,80px);text-align:center;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.2);right:-120px;top:-160px}
+  .cta .eyebrow{color:var(--white)}
+  .cta h2{font-weight:900;font-size:clamp(32px,3.6vw,52px);line-height:1.3;margin-bottom:20px}
+  .cta .ctas{justify-content:center}
+
+  /* Footer */
+  footer{background:var(--ink);color:var(--white);padding:64px 0 48px}
+  .ft-row{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap}
+  .ft-row p{font-size:14px;opacity:.6;margin-top:16px}
+  .cols{display:flex;gap:80px;flex-wrap:wrap}
+  .cols h4{font:700 12px var(--en);letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+  .cols a{display:block;font-size:14px;opacity:.75;margin-bottom:10px}
+  .cols a:hover{opacity:1}
+  .copy{font:400 12px var(--en);opacity:.45;margin-top:48px}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr);row-gap:40px}
+    .hero-body{grid-template-columns:1fr;margin-top:72px}
+    .hero-visual{max-width:520px}
+    .regions-row{grid-template-columns:1fr;gap:48px}
+    .voices{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .links{display:none;position:absolute;top:56px;right:0;left:0;flex-direction:column;align-items:flex-start;gap:20px;background:var(--navy2);padding:24px;border-radius:16px}
+    .links.open{display:flex}
+    .menu-toggle{display:block}
+    .sec-head{flex-direction:column;align-items:flex-start;gap:20px}
+    .cards,.steps,.region-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr);row-gap:28px;margin-top:72px}
+    .step{padding-right:0}
+    .cols{gap:40px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo" aria-label="MERIDIAN ホーム">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="12.5" stroke="#fff" stroke-width="2"/><path d="M14 1.5V26.5" stroke="#FF6A3D" stroke-width="2"/><ellipse cx="14" cy="14" rx="5.5" ry="12.5" stroke="#fff" stroke-width="1.5"/></svg>
+        MERIDIAN
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">MENU</button>
+      <div class="links" id="nav-links">
+        <a href="#services">サービス</a>
+        <a href="#process">進め方</a>
+        <a href="#regions">対応地域</a>
+        <a href="#voice">導入事例</a>
+        <a href="#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
+      </div>
+    </nav>
+
+    <div class="hero-body">
+      <div>
+        <span class="pill"><i></i>GLOBAL EXPANSION PARTNER — 42 COUNTRIES</span>
+        <h1>世界へ、<br><em>最短距離</em>で。</h1>
+        <p class="lead">市場調査から現地法人の設立、ローカライズ、集客まで。<br>海外展開に必要なすべてを、ひとつのチームで伴走します。</p>
+        <div class="ctas">
+          <a href="#contact" class="btn btn-primary">無料で相談する</a>
+          <a href="#services" class="btn btn-ghost">サービス資料</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_30PekJDdex680pQGQKcZXYGwIV7/hf_20261125_012403_4f081d5e-c700-4396-abc0-14d841a84e19.png" loading="eager" alt="空港の窓から夜明けの街と飛行機を見つめるビジネスパーソン" onerror="this.remove()">
+        <svg viewBox="0 0 520 560" fill="none" aria-hidden="true"><circle cx="260" cy="280" r="190" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/><ellipse cx="260" cy="280" rx="80" ry="190" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/><ellipse cx="260" cy="280" rx="150" ry="190" stroke="#fff" stroke-opacity=".2" stroke-width="1.5"/><path d="M70 280H450M95 185H425M95 375H425" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"/><path d="M260 90V470" stroke="#FF6A3D" stroke-width="2.5"/><circle cx="180" cy="210" r="7" fill="#FF6A3D"/><circle cx="345" cy="250" r="7" fill="#fff"/><circle cx="300" cy="370" r="7" fill="#FF6A3D"/><path d="M180 210Q260 150 345 250Q340 330 300 370" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 6"/></svg>
+        <div class="badge"><small>平均立ち上げ期間</small><b>4.2 ヶ月</b></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><b data-count="42">42</b><span>対応国・地域</span></div>
+      <div><b data-count="380" data-suffix="+">380+</b><span>支援プロジェクト</span></div>
+      <div><b data-count="96" data-suffix="%">96%</b><span>継続率</span></div>
+      <div><b>24h</b><span>初回レスポンス</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="eyebrow">Services</p>
+          <h2 class="h2">海外展開を、<br>ワンストップで。</h2>
+        </div>
+        <p>国ごとに異なる法規制・商習慣・文化。<br>専門チームが調査から運用までを一気通貫で担います。</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="num">01</span>
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm9 16-4-4" stroke="#3B5BFF" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3>市場調査・戦略設計</h3>
+          <p>現地の需要、競合、規制を徹底リサーチ。参入可否と勝ち筋をデータで示します。</p>
+          <span class="tag">Market Research</span>
+        </article>
+        <article class="card reveal">
+          <span class="num">02</span>
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20V8l8-4 8 4v12M9 20v-6h6v6" stroke="#3B5BFF" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <h3>法人設立・法務</h3>
+          <p>現地法人・支店の設立、許認可、会計・税務まで、提携専門家と迅速に対応。</p>
+          <span class="tag">Entity Setup</span>
+        </article>
+        <article class="card reveal">
+          <span class="num">03</span>
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h10M9 4v2c0 4-2 8-5 10m3-6c1 3 4 6 7 7m1 3 3-8 3 8m-5-2h4" stroke="#3B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>ローカライズ</h3>
+          <p>Web・プロダクト・資料を30以上の言語へ。翻訳ではなく「現地化」を。</p>
+          <span class="tag">Localization</span>
+        </article>
+        <article class="card reveal">
+          <span class="num">04</span>
+          <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18 10 12l4 4 6-8M15 8h5v5" stroke="#3B5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>現地マーケティング</h3>
+          <p>SNS・広告・インフルエンサー施策で、現地での認知と売上をつくります。</p>
+          <span class="tag">Growth Marketing</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="h2">4つのステップで、<br>確実に立ち上げる。</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="k">STEP 01</span><h3>ヒアリング</h3><p>事業の目的・予算・時期を伺い、候補国を絞り込みます。</p><span class="d">1〜2週</span></div>
+        <div class="step reveal"><span class="k">STEP 02</span><h3>調査・計画</h3><p>市場・規制・競合を調査し、参入ロードマップを策定。</p><span class="d">3〜6週</span></div>
+        <div class="step reveal"><span class="k">STEP 03</span><h3>設立・準備</h3><p>法人設立、ローカライズ、現地パートナーの選定。</p><span class="d">1〜3ヶ月</span></div>
+        <div class="step reveal"><span class="k">STEP 04</span><h3>ローンチ・運用</h3><p>集客施策を実行し、KPIを見ながら改善を継続。</p><span class="d">継続</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="regions" class="regions">
+    <div class="wrap regions-row">
+      <div class="reveal">
+        <p class="eyebrow">Coverage</p>
+        <h2 class="h2">42の国と地域に、<br>現地チーム。</h2>
+        <p class="lead">各拠点に現地出身のスタッフが常駐。言語だけでなく、商習慣や文化の「肌感覚」で事業を支えます。</p>
+      </div>
+      <div class="region-grid">
+        <div class="region reveal"><b>Asia Pacific</b><span>14 countries</span></div>
+        <div class="region reveal"><b>North America</b><span>3 countries</span></div>
+        <div class="region reveal"><b>Europe</b><span>18 countries</span></div>
+        <div class="region reveal"><b>Middle East &amp; Africa</b><span>7 countries</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="voice">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Case Study</p>
+        <h2 class="h2">導入企業の声</h2>
+      </div>
+      <div class="voices">
+        <figure class="voice reveal"><blockquote>「社内に海外の知見がゼロの状態から、わずか5ヶ月でシンガポール法人を立ち上げられました。」</blockquote><figcaption class="who"><i>SG</i>食品メーカー / 海外事業部長</figcaption></figure>
+        <figure class="voice reveal"><blockquote>「現地SNS施策で、ローンチ3ヶ月で売上目標の140%を達成。数字で語れるパートナーです。」</blockquote><figcaption class="who"><i>US</i>D2Cコスメブランド / CEO</figcaption></figure>
+        <figure class="voice reveal"><blockquote>「ドイツ語圏への展開で、法務と翻訳の窓口を一本化できたのが大きかった。」</blockquote><figcaption class="who"><i>DE</i>SaaS企業 / COO</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-sec">
+    <div class="wrap">
+      <div class="cta reveal">
+        <p class="eyebrow">Let’s go global</p>
+        <h2>まずは30分、<br>無料でご相談ください。</h2>
+        <p>候補国の選定段階からでも大丈夫です。担当者が24時間以内にご連絡します。</p>
+        <div class="ctas">
+          <a href="mailto:contact@example.com" class="btn btn-primary">無料で相談する</a>
+          <a href="#services" class="btn btn-ghost">サービス資料</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-row">
+      <div>
+        <a href="#" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="12.5" stroke="#fff" stroke-width="2"/><path d="M14 1.5V26.5" stroke="#FF6A3D" stroke-width="2"/><ellipse cx="14" cy="14" rx="5.5" ry="12.5" stroke="#fff" stroke-width="1.5"/></svg>MERIDIAN</a>
+        <p>海外展開を、もっとシンプルに。</p>
+      </div>
+      <div class="cols">
+        <div><h4>SERVICE</h4><a href="#services">市場調査</a><a href="#services">法人設立</a><a href="#services">ローカライズ</a><a href="#services">マーケティング</a></div>
+        <div><h4>COMPANY</h4><a href="#">会社概要</a><a href="#">採用情報</a><a href="#">ニュース</a></div>
+        <div><h4>CONTACT</h4><a href="#contact">お問い合わせ</a><a href="#contact">資料ダウンロード</a></div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Meridian Global Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const t=document.querySelector('.menu-toggle'), l=document.getElementById('nav-links');
+  t.addEventListener('click',()=>{const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',e=>{if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded',false)}});
+
+  // Scroll reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+
+  // Count-up stats
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){document.querySelectorAll('[data-count]').forEach(el=>{
+    const end=+el.dataset.count, suf=el.dataset.suffix||'';
+    new IntersectionObserver(([e],o)=>{if(!e.isIntersecting)return;o.disconnect();const s=performance.now();
+      const tick=n=>{const p=Math.min((n-s)/1200,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}).observe(el);
+  })}
+</script>
+</body>
+</html>
